@@ -34,4 +34,4 @@ if (( $# < 3 )); then
     exit 1
 fi
 
-java -jar $jarfile --allowResign --skipZipAlign $@
+java -jar $jarfile --allowResign --skipZipAlign "$@"
