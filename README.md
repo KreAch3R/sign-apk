@@ -13,3 +13,11 @@ Use it to sign any apk with whatever you want, with the speed and ease of your t
 ## How it works
 
 It is an wrapper/script for patrickfav's uber-apk-signer. The jar itself provides a lot more options, but there is no way to remember all the arguments every time you want to sign an apk. This wrapper provides all the necessary arguments to resign any apk by default, and only leaves the apk file and the keystore file to the user.
+
+## How to use
+Example command:
+```
+$ sign-apk -a APKFILE -ks KEYSTOREFILE -ksAlias KEYNAME
+```
+
+The jar will ask you for your password at runtime (you can also provide it using two more arguments, `--ksKeyPass` and `--ksPass`)
