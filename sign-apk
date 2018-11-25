@@ -27,3 +27,11 @@ reset=$(tput sgr0)
 DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 jarfile=$(ls $DIR | grep uber-apk-signer-.*.jar)
 
+# Check for at least 3 arguments, else abort
+if (( $# < 3 )); then
+    echo "${red}Illegal number of parameters!${reset}"
+    echo "${red}You need to specify at least three arguments, -a APKFILE, -ks KEYSTOREFILE, --ksAlias KEYNAME${reset}"
+    exit 1
+fi
+
+java -jar $jarfile --allowResign --skipZipAlign $@
